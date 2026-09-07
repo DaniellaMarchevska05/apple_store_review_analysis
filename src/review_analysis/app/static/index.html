@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Review Studio · App Store insights
+  </title>
+  <link href="/static/style.css" rel="stylesheet"/>
+  <script defer="" src="/static/app.js">
+  </script>
+ </head>
+ <body>
+  <header class="topbar">
+   <a aria-label="Review Studio home" class="brand" href="/">
+    <span aria-hidden="true" class="mark">
+     r.
+    </span>
+    Review Studio
+   </a>
+   <span class="header-note">
+    APP STORE INSIGHTS
+   </span>
+   <a class="quiet-link" href="/docs">
+    API docs ↗
+   </a>
+  </header>
+  <main>
+   <section class="intro">
+    <div class="eyebrow">
+     <span class="dot">
+     </span>
+     FROM REVIEWS TO NEXT STEPS
+    </div>
+    <h1>
+     Listen closer.
+     <br/>
+     <span>
+      Build better.
+     </span>
+    </h1>
+    <p>
+     Understand what people love, what gets in their way,
+     <br class="desktop-break"/>
+     and where your app can improve.
+    </p>
+   </section>
+   <section aria-labelledby="search-heading" class="search-panel">
+    <div class="section-heading">
+     <h2 id="search-heading">
+      Start with an app
+     </h2>
+     <span class="muted">
+      A sample of up to 100 recent reviews
+     </span>
+    </div>
+    <form id="search-form">
+     <div class="field app-field">
+      <label for="query">
+       App name
+      </label>
+      <input autocomplete="off" id="query" maxlength="200" minlength="2" name="query" placeholder="Search by app name" required=""/>
+     </div>
+     <div class="field country-field" id="country-picker">
+      <label for="country">
+       Storefront
+      </label>
+      <div class="country-control">
+       <input autocomplete="off" disabled id="country" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="country-options" placeholder="Search countries…" required value="United States"/>
+       <svg class="country-chevron" aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div id="country-options" class="country-options" role="listbox" aria-label="Countries and regions" hidden></div>
+     </div>
+     <button id="search-button" type="submit">
+      Find app
+      <span aria-hidden="true">
+       ↗
+      </span>
+     </button>
+    </form>
+    <div aria-label="Matching apps" class="search-results" id="search-results">
+    </div>
+   </section>
+   <div aria-live="polite" class="status" hidden="" id="status" role="status">
+   </div>
+   <div class="error" hidden="" id="error" role="alert">
+   </div>
+   <section class="empty-state" id="empty-state">
+    <span aria-hidden="true" class="empty-symbol">
+     ▥
+    </span>
+    <div>
+     <h2>
+      A clearer picture starts here.
+     </h2>
+     <p>
+      Find an app, choose a match, and turn recent feedback into a focused report.
+     </p>
+    </div>
+   </section>
+   <section aria-labelledby="report-title" hidden="" id="report">
+    <div class="report-heading">
+     <div>
+      <div class="eyebrow">
+       REVIEW SNAPSHOT
+      </div>
+      <h2 id="report-title" tabindex="-1">
+      </h2>
+      <p class="muted" id="report-meta">
+      </p>
+     </div>
+     <div class="downloads">
+      <a class="secondary" id="csv-link">
+       Download CSV ↓
+      </a>
+      <a class="quiet-link" id="json-link">
+       JSON ↓
+      </a>
+     </div>
+    </div>
+    <div class="stats">
+     <div class="stat">
+      <span>
+       Average rating
+      </span>
+      <div>
+       <strong id="average">
+        —
+       </strong>
+       <small>
+        / 5
+       </small>
+      </div>
+      <span class="stat-note">
+       Across the sampled reviews
+      </span>
+     </div>
+     <div class="stat">
+      <span>
+       Reviews sampled
+      </span>
+      <div>
+       <strong id="sample-count">
+        —
+       </strong>
+      </div>
+      <span class="stat-note">
+       From accessible recent reviews
+      </span>
+     </div>
+     <div class="stat">
+      <span>
+       Negative sentiment
+      </span>
+      <div>
+       <strong id="negative">
+        —
+       </strong>
+      </div>
+      <span class="stat-note" id="coverage">
+       Analysis pending
+      </span>
+     </div>
+    </div>
+    <div class="charts">
+     <section class="panel">
+      <div class="section-heading">
+       <h3>
+        Rating distribution
+       </h3>
+       <span class="muted">
+        All sampled reviews
+       </span>
+      </div>
+      <div class="bars" id="ratings">
+      </div>
+     </section>
+     <section class="panel">
+      <div class="section-heading">
+       <h3>
+        Sentiment
+       </h3>
+       <span class="muted" id="sentiment-scope">
+        Interpretable reviews
+       </span>
+      </div>
+      <div class="bars" id="sentiment">
+       <p class="muted">
+        Sentiment will appear when analysis is complete.
+       </p>
+      </div>
+     </section>
+    </div>
+    <div class="analysis-action" hidden="" id="analysis-action">
+     <p>
+      Ratings and downloads are ready. Continue to see the review findings.
+     </p>
+     <button id="analyze-button">
+      Analyze reviews ↗
+     </button>
+    </div>
+    <section hidden="" id="findings">
+     <div class="findings-heading">
+      <div class="eyebrow">WHAT TO KEEP</div>
+      <h2>What users appreciate</h2>
+      <p class="muted">Specific strengths supported by the reviews.</p>
+     </div>
+     <div id="strengths"></div>
+     <div class="findings-heading">
+      <div class="eyebrow">
+       WHAT TO WORK ON
+      </div>
+      <h2>
+       From feedback to action
+      </h2>
+      <p class="muted">
+       Selected concerns, ordered by supporting review count. Frequency does not measure severity.
+      </p>
+     </div>
+     <div id="insights">
+     </div>
+     <section class="panel phrases-panel">
+      <h3>
+       Recurring language
+      </h3>
+      <p class="muted">
+       Selected source phrases shared by at least two negative reviews. Original language preserved.
+      </p>
+      <div class="phrases" id="phrases">
+      </div>
+     </section>
+    </section>
+    <details class="notes">
+     <summary>
+      About this sample
+     </summary>
+     <ul id="warnings">
+     </ul>
+    </details>
+   </section>
+  </main>
+  <footer class="page-footer">
+   <span>
+    Review Studio
+   </span>
+   <span>
+    Small sample. Useful perspective.
+   </span>
+  </footer>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title description">
+<title id="title">Love and Deepspace: sampled ratings and sentiment</title>
+<desc id="description">100 US-storefront reviews collected September 6, 2026. Average rating 1.59 out of 5. Ratings: 5 stars 9%, 4 stars 2%, 3 stars 3%, 2 stars 11%, 1 star 75%. Sentiment: positive 11%, neutral 3%, negative 86%.</desc>
+<rect width="1000" height="440" rx="16" fill="#f7f8f2"/>
+<g font-family="system-ui, sans-serif" fill="#203631">
+<text x="32" y="43" font-size="23" font-weight="700">Love and Deepspace</text>
+<text x="32" y="70" font-size="14" fill="#58675f">US storefront · 100 sampled reviews · 6 September 2026</text>
+<rect x="24" y="96" width="464" height="288" rx="12" fill="#ffffff"/>
+<rect x="512" y="96" width="464" height="288" rx="12" fill="#ffffff"/>
+<text x="44" y="128" font-size="18" font-weight="600">Rating distribution</text>
+<text x="44" y="152" font-size="13" fill="#58675f">Average: 1.59 / 5 · all 100 sampled reviews</text>
+<text x="532" y="128" font-size="18" font-weight="600">Sentiment distribution</text>
+<text x="532" y="152" font-size="13" fill="#58675f">100 interpretable reviews · 0 excluded</text>
+<text x="44" y="194" font-size="14">5 star</text>
+<rect x="119" y="178" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="119" y="178" width="22.5" height="22" rx="4" fill="#235746"/>
+<text x="381" y="194" font-size="14">9 · 9%</text>
+<text x="44" y="231" font-size="14">4 star</text>
+<rect x="119" y="215" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="119" y="215" width="5" height="22" rx="4" fill="#235746"/>
+<text x="381" y="231" font-size="14">2 · 2%</text>
+<text x="44" y="268" font-size="14">3 star</text>
+<rect x="119" y="252" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="119" y="252" width="7.5" height="22" rx="4" fill="#235746"/>
+<text x="381" y="268" font-size="14">3 · 3%</text>
+<text x="44" y="305" font-size="14">2 star</text>
+<rect x="119" y="289" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="119" y="289" width="27.5" height="22" rx="4" fill="#235746"/>
+<text x="381" y="305" font-size="14">11 · 11%</text>
+<text x="44" y="342" font-size="14">1 star</text>
+<rect x="119" y="326" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="119" y="326" width="187.5" height="22" rx="4" fill="#235746"/>
+<text x="381" y="342" font-size="14">75 · 75%</text>
+<text x="532" y="202" font-size="14">Positive</text>
+<rect x="607" y="186" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="607" y="186" width="27.5" height="22" rx="4" fill="#587850"/>
+<text x="869" y="202" font-size="14">11 · 11%</text>
+<text x="532" y="260" font-size="14">Neutral</text>
+<rect x="607" y="244" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="607" y="244" width="7.5" height="22" rx="4" fill="#7c8674"/>
+<text x="869" y="260" font-size="14">3 · 3%</text>
+<text x="532" y="318" font-size="14">Negative</text>
+<rect x="607" y="302" width="250" height="22" rx="4" fill="#eef1e9"/>
+<rect x="607" y="302" width="215" height="22" rx="4" fill="#b36851"/>
+<text x="869" y="318" font-size="14">86 · 86%</text>
+<text x="32" y="416" font-size="13" fill="#58675f">Bar scale: 0-100% · Labels: review count · percentage · This sample is not the app's lifetime rating.</text></g></svg>
