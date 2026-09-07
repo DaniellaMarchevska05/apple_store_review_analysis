@@ -3,6 +3,12 @@
 Collect up to 100 random App Store reviews and view rating/sentiment charts, strengths,
 complaints, recommendations, and supporting quotations.
 
+## Live app
+
+Open [App Store Review Analysis](https://apple-review-analysis.duckdns.org).
+Hosted on AWS EC2 with Docker and Nginx. HTTPS certificates renew automatically;
+HTTP requests redirect to HTTPS.
+
 ## Run locally
 
 Requires Python 3.12–3.13 and [uv](https://docs.astral.sh/uv/).
