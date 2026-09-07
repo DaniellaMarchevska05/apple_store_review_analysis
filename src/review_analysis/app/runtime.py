@@ -30,7 +30,7 @@ async def open_service(settings: Settings) -> AsyncIterator[ReviewService]:
             async with AsyncOpenAI(
                 api_key=key.get_secret_value(),
                 base_url=settings.llm_base_url,
-                timeout=45,
+                timeout=httpx.Timeout(settings.analysis_timeout_seconds, connect=10),
                 max_retries=2,
                 http_client=httpx.AsyncClient(verify=context),
             ) as client:

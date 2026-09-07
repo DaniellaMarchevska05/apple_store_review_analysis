@@ -277,7 +277,7 @@ function showAnalysis(analysis) {
 }
 
 async function analyze() {
-  setBusy(true, "Reading reviews and preparing findings. This may take a minute…");
+  setBusy(true, "Reading reviews and preparing findings. This may take several minutes…");
   $("analysis-action").hidden = true;
   try {
     showAnalysis(await request(`${collectionPath()}/analysis`, {
@@ -289,6 +289,7 @@ async function analyze() {
     $("analysis-action").hidden = false;
     $("analyze-button").textContent = "Retry analysis ↗";
     showError(error);
+    $("analysis-action").querySelector("p").textContent = $("error").textContent;
   }
 }
 

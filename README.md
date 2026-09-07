@@ -27,6 +27,8 @@ reading saved reports still work.
 Optional settings in `.env`: `LLM_BASE_URL` and `LLM_API` (`responses` or `chat`) select
 a provider supporting structured JSON output. `DATABASE_PATH` changes storage;
 `COLLECTION_TIMEOUT_SECONDS` and `ANALYSIS_TIMEOUT_SECONDS` default to 90 and 180 seconds.
+For slower models, set `ANALYSIS_TIMEOUT_SECONDS=600`; provider reads follow that deadline
+while connection attempts are limited to 10 seconds.
 
 ## How it works
 

@@ -6,6 +6,7 @@ from typing import Literal, Protocol, TypeVar
 from openai import (
     APIConnectionError,
     APIStatusError,
+    APITimeoutError,
     AsyncOpenAI,
     ContentFilterFinishReasonError,
     LengthFinishReasonError,
@@ -100,6 +101,10 @@ class LLMClient:
                 chat_usage.prompt_tokens if chat_usage else 0,
                 chat_usage.completion_tokens if chat_usage else 0,
             )
+        except APITimeoutError as exc:
+            raise AppError(
+                "ai_timeout", "AI provider took too long to respond; reviews are saved.", 504
+            ) from exc
         except APIConnectionError as exc:
             raise AppError("ai_unavailable", "AI provider could not be reached.", 503) from exc
         except APIStatusError as exc:
