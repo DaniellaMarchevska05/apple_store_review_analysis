@@ -98,10 +98,12 @@ class AppleClient:
         warnings = [
             "Sample covers accessible recent reviews in one storefront, not all historical reviews."
         ]
+        review_path = f"/id={request.app_id}/sortby=mostrecent/json"
         for page in range(1, 11):
+            # Apple pagination needs urlDesc; omitting it can return a false empty feed.
             payload = await self._get_json(
-                f"{BASE_URL}/{request.country}/rss/customerreviews/page={page}"
-                f"/id={request.app_id}/sortby=mostrecent/json"
+                f"{BASE_URL}/{request.country}/rss/customerreviews/page={page}{review_path}"
+                f"?urlDesc=/customerreviews{review_path}"
             )
             feed = payload.get("feed")
             if not isinstance(feed, dict):
@@ -135,6 +137,7 @@ class AppleClient:
                 isinstance(link, dict)
                 and isinstance(link.get("attributes"), dict)
                 and link["attributes"].get("rel") == "next"
+                and link["attributes"].get("href")
                 for link in links
             ):
                 break
